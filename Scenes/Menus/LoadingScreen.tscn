@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://s7jvt7r6jumo"]
+
+[ext_resource type="Script" uid="uid://c0fs0hwvdkvb5" path="res://Scenes/Menus/LoadingScreen.gd" id="1_tcdvt"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tcdvt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -9.0
+offset_right = 1305.0
+offset_bottom = 741.0
+color = Color(0.125911, 0.125911, 0.125911, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 313.0
+offset_right = 517.0
+offset_bottom = 336.0
+scale = Vector2(4, 4)
+text = "Loading Game..."
