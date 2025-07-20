@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3228okj5wki3"]
+
+[ext_resource type="Texture2D" uid="uid://dj7ve8ulo6i15" path="res://GFX/Items/Cheese.png" id="1_812cp"]
+
+[sub_resource type="GDScript" id="GDScript_gp4hd"]
+script/source = "@export var item_icon: Texture2D = null
+@export var item_name: String = \"\"
+@export var item_desc: String = \"\"
+"
+
+[resource]
+script = SubResource("GDScript_gp4hd")
+item_icon = ExtResource("1_812cp")
+item_name = "Slice of Cheese"
+item_desc = "A delicious slice of cheese."

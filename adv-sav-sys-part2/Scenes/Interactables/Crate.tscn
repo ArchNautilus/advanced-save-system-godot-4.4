@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://oen2mwxny72i"]
+
+[ext_resource type="Texture2D" uid="uid://dtmoqfubbe4xs" path="res://GFX/Tileset/TX Props.png" id="1_8srfx"]
+[ext_resource type="Script" uid="uid://cj804w6vw5qmi" path="res://Scenes/Interactables/Crate.gd" id="1_cbk4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbk4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7yuqe"]
+size = Vector2(70, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5itr1"]
+atlas = ExtResource("1_8srfx")
+region = Rect2(160, 18, 32, 47)
+
+[node name="Crate" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cbk4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cbk4a")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("RectangleShape2D_7yuqe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_5itr1")

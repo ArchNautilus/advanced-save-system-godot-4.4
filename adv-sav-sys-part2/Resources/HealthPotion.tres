@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ca7bu25d8v28q"]
+
+[ext_resource type="Texture2D" uid="uid://cthuwijsbrqoh" path="res://GFX/Items/Red Potion.png" id="1_85ncv"]
+
+[sub_resource type="GDScript" id="GDScript_gp4hd"]
+script/source = "@export var item_icon: Texture2D = null
+@export var item_name: String = \"\"
+@export var item_desc: String = \"\"
+"
+
+[resource]
+script = SubResource("GDScript_gp4hd")
+item_icon = ExtResource("1_85ncv")
+item_name = "Health Potion"
+item_desc = "Drink this to replenish your health."

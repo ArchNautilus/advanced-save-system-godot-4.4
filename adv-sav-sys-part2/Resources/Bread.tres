@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://35dkb1jwxxb"]
+
+[ext_resource type="Texture2D" uid="uid://dr22q0dvdxy8r" path="res://GFX/Items/Bread.png" id="1_0figc"]
+
+[sub_resource type="GDScript" id="GDScript_gp4hd"]
+script/source = "@export var item_icon: Texture2D = null
+@export var item_name: String = \"\"
+@export var item_desc: String = \"\"
+"
+
+[resource]
+script = SubResource("GDScript_gp4hd")
+item_icon = ExtResource("1_0figc")
+item_name = "Loaf of Bread"
+item_desc = "A large loaf of bread."
