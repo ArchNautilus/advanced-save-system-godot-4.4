@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://boiffsdn5v7s5"]
+
+[ext_resource type="Texture2D" uid="uid://b1rttoeopk3" path="res://GFX/Player/TX Player-alt.png" id="1_s0eop"]
+[ext_resource type="Script" uid="uid://6u2a85m27ay" path="res://Scenes/Player/Player.gd" id="1_ude3g"]
+[ext_resource type="PackedScene" uid="uid://d1s55yebmn1or" path="res://Scenes/Menus/SaveMenu.tscn" id="3_h54ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft8w5"]
+size = Vector2(20, 28)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ude3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ft8w5")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(10, -2)
+texture = ExtResource("1_s0eop")
+hframes = 5
+frame = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s0eop")
+hframes = 5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4, 4)
+
+[node name="ColorRect" type="ColorRect" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 335.0
+offset_bottom = 203.0
+color = Color(0.137255, 0.137255, 0.137255, 0.737255)
+
+[node name="MenuButton" type="Button" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = 116.5
+offset_top = 145.75
+offset_right = 209.5
+offset_bottom = 176.75
+text = "Save Menu"
+
+[node name="SaveMenu" parent="UI" instance=ExtResource("3_h54ih")]
+visible = false
+
+[connection signal="pressed" from="UI/Inventory/MenuButton" to="." method="_on_menu_button_pressed"]
